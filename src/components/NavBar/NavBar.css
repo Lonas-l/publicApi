@@ -1,0 +1,22 @@
+.NavBar {
+  width: 100%;
+  background: #000000;
+}
+
+.NavBar__list {
+  display: flex;
+  color: #fff;
+  padding: 20px;
+}
+.NavBar__list .NavBar__item {
+  margin-right: 10px;
+}
+.NavBar__list a {
+  color: #fff;
+  transition: all ease 0.2ms;
+}
+.NavBar__list a:hover {
+  color: purple;
+}
+
+/*# sourceMappingURL=EvilInsult.css.map */

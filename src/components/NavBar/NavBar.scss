@@ -1,0 +1,27 @@
+.NavBar {
+  width: 100%;
+  background: #000000;
+}
+
+.NavBar__list {
+  display: flex;
+  color: #fff;
+  padding: 20px;
+
+  .NavBar__item {
+    margin-right: 10px;
+  }
+
+  a {
+    color: #fff;
+    transition: all ease 0.2ms;
+    &:hover {
+      color: purple;
+    }
+  }
+
+}
+
+
+
+
