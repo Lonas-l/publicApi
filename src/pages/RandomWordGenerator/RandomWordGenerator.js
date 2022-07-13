@@ -1,28 +1,34 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./RandomWordGenerator.css"
-import axios from "axios";
+import {getCatImage, getWord} from './services'
 
 export default function RandomWordGenerator () {
 
     const [word, setWord] = useState([] )
+    const [cat, setCat] = useState([{}] )
 
-    const getWord = () => {
-        axios.get('https://random-word-api.herokuapp.com/word?number=10')
-            .then(responce => {
-                console.log(responce.data)
-                setWord(responce.data)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    }
+    useEffect(() => {
+        getCatImage(setCat);
+    },[])
+
+    console.log(cat[0])
 
     return (
-        <div>
-            <h1>{word[0]}</h1>
+        <div className="wordGeneratorPage">
 
-            <button onClick={getWord}>
-                Click on me
+            <div className='wordWrapper'>
+                {/*{word.map((value) =>*/}
+                {/*    <span className='wordBlock' key={value}>{value}</span>*/}
+                {/*)}*/}
+            </div>
+
+            {/* I can't found free image search API, but i found API random cats....*/}
+            <figure className='catWrapper' onClick={() => getCatImage(setCat) }>
+                <img src={cat[0].url} alt=""/>
+            </figure>
+
+            <button onClick={() => getCatImage(setCat) } className='generateButton'>
+                Generate
             </button>
 
         </div>
